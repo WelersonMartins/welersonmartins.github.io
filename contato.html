@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+<head>
+	<meta charset="UTF-8" />
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+	<link href="css/style.css" rel="stylesheet" />
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+		crossorigin="anonymous"></script>
+	<title>Contatos - Tech Store</title>
+</head>
+
+<body>
+	<section id="navegacao">
+		<nav class="navbar navbar-expand-lg bg-body-tertiary">
+			<div class="container-fluid">
+				<a class="navbar-brand" href="#">Tech Store</a>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+					data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+					aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+						<li class="nav-item">
+							<a class="nav-link active" aria-current="page" href="index.html">Home</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link active" aria-current="page" href="produtos.html">Produtos</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link active" aria-current="page" href="contato.html">Contato</a>
+						</li>
+				</div>
+			</div>
+		</nav>
+	</section>
+
+	<section id="conteudo" class="container py-5">
+		<h1 class="text-center mb-4">Fale Conosco</h1>
+
+		<div class="row row-cols-1 row-cols-lg-2 g-4 align-items-stretch">
+			<div id="info" class="col">
+				<div class="card h-100">
+					<div class="card-body">
+						<h5 class="card-title">Atendimento Tech Store</h5>
+						<p class="card-text mb-2">Estamos prontos para te ajudar com duvidas sobre produtos e pedidos.</p>
+						<p class="mb-1"><strong>Email:</strong> contato@techstore.com</p>
+						<p class="mb-1"><strong>Telefone:</strong> (11) 99999-9999</p>
+						<p class="mb-0"><strong>Horario:</strong> Segunda a Sexta, 9h as 18h</p>
+					</div>
+				</div>
+			</div>
+
+			<div id="formulario" class="col">
+				<div class="card h-100">
+					<div class="card-header">Contato</div>
+					<div class="card-body">
+						<form>
+							<div class="mb-3">
+								<label for="nome" class="form-label">Nome:</label>
+								<input class="form-control" type="text" id="nome" />
+							</div>
+
+							<div class="mb-3">
+								<label for="email" class="form-label">Email:</label>
+								<input type="email" class="form-control" id="email" placeholder="Digite seu email">
+								<small id="emailHelp" class="form-text text-muted">Seu e-mail nao sera compartilhado.</small>
+							</div>
+
+							<div class="mb-3">
+								<label for="cep" class="form-label">CEP (somente numeros):</label>
+								<input type="number" class="form-control" id="cep" placeholder="_____-__">
+							</div>
+
+							<div class="mb-3">
+								<label for="mensagem" class="form-label">Digite sua mensagem:</label>
+								<textarea id="mensagem" class="form-control" rows="3"></textarea>
+							</div>
+
+							<button type="submit" class="btn btn-primary">Enviar</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+</body>
+
+</html>
