@@ -14,3 +14,10 @@ body {
 	object-position: center; /* Centraliza o recorte */
 	padding-bottom: 20px; /* Adiciona um espaçamento inferior para evitar que o conteúdo fique muito próximo do slider */
 }
+
+.img-produto {
+  width: 100%;
+  height: 220px;      /* altura padrão para todos os cards */
+  object-fit: cover;  /* recorta sem deformar */
+  object-position: center;
+}

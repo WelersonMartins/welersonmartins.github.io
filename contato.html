@@ -50,7 +50,7 @@
 						<p class="card-text mb-2">Estamos prontos para te ajudar com duvidas sobre produtos e pedidos.
 						</p>
 						<p class="mb-1"><strong>Email:</strong> contato@techstore.com</p>
-						<p class="mb-1"><strong>Telefone:</strong> (11) 99999-9999</p>
+						<p class="mb-1"><strong>Telefone:</strong> (49) 99999-9999</p>
 						<p class="mb-0"><strong>Horario:</strong> Segunda a Sexta, 9h as 18h</p>
 					</div>
 				</div>
@@ -75,7 +75,31 @@
 
 							<div class="mb-3">
 								<label for="cep" class="form-label">CEP (somente numeros):</label>
-								<input type="number" class="form-control" id="cep" placeholder="_____-__">
+								<input type="number" class="form-control" id="cep" placeholder="00000-000" pattern="\d{5}-?\d{3}" maxlength="9" >
+							</div>
+
+							<div class="row g-3 mb-3">
+								<div class="col-md-3">
+									<label for="uf" class="form-label">UF:</label>
+									<input type="text" class="form-control" id="uf" placeholder="Ex: SC">
+								</div>
+
+								<div class="col-md-9">
+									<label for="cidade" class="form-label">Cidade:</label>
+									<input type="text" class="form-control" id="cidade" placeholder="Digite sua cidade">
+								</div>
+							</div>
+
+							<div class="row g-3 mb-3">
+								<div class="col-md-5">
+									<label for="bairro" class="form-label">Bairro:</label>
+									<input type="text" class="form-control" id="bairro" placeholder="Digite o bairro">
+								</div>
+
+								<div class="col-md-7">
+									<label for="logradouro" class="form-label">Logradouro:</label>
+									<input type="text" class="form-control" id="logradouro" placeholder="Digite o logradouro">
+								</div>
 							</div>
 
 							<div class="mb-3">
@@ -92,7 +116,8 @@
 	</section>
 
 	<script src="js/main.js"></script>
-	
+	<script src="js/api.js"></script>
+
 </body>
 
 </html>

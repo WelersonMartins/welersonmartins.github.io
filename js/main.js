@@ -16,6 +16,8 @@ function aplicarTema(tema) {
 	
 }
 
+
+
 /**
  * Alterna entre os temas claro e escuro, aplicando o novo tema e salvando a escolha no localStorage.
  */
@@ -38,4 +40,3 @@ aplicarTema(temaSalvo);
 const botaoTema = document.getElementById("btnTema");
 // Adiciona um ouvinte de evento ao botão de tema para alternar o tema quando clicado
 if (botaoTema) botaoTema.addEventListener("click", alternarTema);
-
