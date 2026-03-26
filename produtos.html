@@ -8,7 +8,9 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
     crossorigin="anonymous"></script>
-	<title>Produtos - Tech Store</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <title>Produtos - Tech Store</title>
 </head>
 
 <body>
@@ -32,6 +34,7 @@
               <a class="nav-link active" aria-current="page" href="contato.html">Contato</a>
             </li>
           </ul>
+          <button class="btn btn-outline-secondary btn-md" type="button"><span id="total-carrinho">0</span><i class="bi bi-cart"></i></button>
           <button id="btnTema" class="btn btn-outline-secondary btn-sm" type="button">Tema: Light</button>
         </div>
       </div>
@@ -46,9 +49,24 @@
         <div class="card h-100">
           <div class="card-body">
             <h5 class="card-title">Notebook Gamer</h5>
-            <img src="https://images.pexels.com/photos/1229861/pexels-photo-1229861.jpeg?auto=compress&cs=tinysrgb&w=1200" class="card-img-top mb-3 img-produto" alt="Notebook gamer com teclado iluminado">
+            <img
+              src="https://images.pexels.com/photos/1229861/pexels-photo-1229861.jpeg?auto=compress&cs=tinysrgb&w=1200"
+              class="card-img-top mb-3 img-produto" alt="Notebook gamer com teclado iluminado">
             <p class="card-text">Alto desempenho para estudo, trabalho e jogos.</p>
-            <a href="contato.html" class="btn btn-primary">Quero saber mais</a>
+            <div class="row text-end">
+              <div class="col-md-12 ">
+                <div class="input-group">
+                  <label for="quantidade-notebook" class="input-group-text">Adicionar ao carrinho:</label>
+                  <button class="btn btn-outline-secondary btn-md" onclick="adicionarAoCarrinho('quantidade-notebook', -1) " type="button">-</button>
+                  <input type="number" id="quantidade-notebook" class="form-control  form-control-md text-center" value="0" min="0">
+                  <button class="btn btn-outline-secondary btn-md" onclick="adicionarAoCarrinho('quantidade-notebook', 1) " type="button">+</button>
+                </div>
+              </div>
+              <div class="col-md-12 p-2 text-end">
+                <a href="contato.html" class="btn btn-primary">Quero saber mais</a>
+              </div>
+            </div>
+            
           </div>
         </div>
       </div>
@@ -57,9 +75,22 @@
         <div class="card h-100">
           <div class="card-body">
             <h5 class="card-title">Smartphone 5G</h5>
-            <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=1200&q=80" class="card-img-top mb-3 img-produto" alt="Smartphone moderno com tela infinita">
+            <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=1200&q=80"
+              class="card-img-top mb-3 img-produto" alt="Smartphone moderno com tela infinita">
             <p class="card-text">Conectividade e velocidade para o seu dia a dia.</p>
-            <a href="contato.html" class="btn btn-primary">Quero saber mais</a>
+            <div class="row text-end">
+              <div class="col-md-12 ">
+                <div class="input-group">
+                  <label for="quantidade-smartphone" class="input-group-text">Adicionar ao carrinho:</label>
+                  <button class="btn btn-outline-secondary btn-md" onclick="adicionarAoCarrinho('quantidade-smartphone', -1) " type="button">-</button>
+                  <input type="number" id="quantidade-smartphone" class="form-control  form-control-md text-center" value="0" min="0">
+                  <button class="btn btn-outline-secondary btn-md" onclick="adicionarAoCarrinho('quantidade-smartphone', 1) " type="button">+</button>
+                </div>
+              </div>
+              <div class="col-md-12 p-2 text-end">
+                <a href="contato.html" class="btn btn-primary">Quero saber mais</a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -68,9 +99,22 @@
         <div class="card h-100">
           <div class="card-body">
             <h5 class="card-title">Fone Bluetooth</h5>
-            <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=1200&q=80" class="card-img-top mb-3 img-produto" alt="Fone bluetooth preto premium">
+            <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=1200&q=80"
+              class="card-img-top mb-3 img-produto" alt="Fone bluetooth preto premium">
             <p class="card-text">Som de qualidade com liberdade sem fio.</p>
-            <a href="contato.html" class="btn btn-primary">Quero saber mais</a>
+            <div class="row text-end">
+              <div class="col-md-12 ">
+                <div class="input-group">
+                  <label for="quantidade-fone" class="input-group-text">Adicionar ao carrinho:</label>
+                  <button class="btn btn-outline-secondary btn-md" onclick="adicionarAoCarrinho('quantidade-fone', -1) " type="button">-</button>
+                  <input type="number" id="quantidade-fone" class="form-control  form-control-md text-center" value="0" min="0">
+                  <button class="btn btn-outline-secondary btn-md" onclick="adicionarAoCarrinho('quantidade-fone', 1) " type="button">+</button>
+                </div>
+              </div>
+              <div class="col-md-12 p-2 text-end">
+                <a href="contato.html" class="btn btn-primary">Quero saber mais</a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -79,9 +123,22 @@
         <div class="card h-100">
           <div class="card-body">
             <h5 class="card-title">Mouse Sem Fio</h5>
-            <img src="https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?auto=format&fit=crop&w=1200&q=80" class="card-img-top mb-3 img-produto" alt="Mouse sem fio ergonomico">
+            <img src="https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?auto=format&fit=crop&w=1200&q=80"
+              class="card-img-top mb-3 img-produto" alt="Mouse sem fio ergonomico">
             <p class="card-text">Precisao e conforto para produtividade.</p>
-            <a href="contato.html" class="btn btn-primary">Quero saber mais</a>
+            <div class="row text-end">
+              <div class="col-md-12 ">
+                <div class="input-group">
+                  <label for="quantidade-mouse" class="input-group-text">Adicionar ao carrinho:</label>
+                  <button class="btn btn-outline-secondary btn-md" onclick="adicionarAoCarrinho('quantidade-mouse', -1) " type="button">-</button>
+                  <input type="number" id="quantidade-mouse" class="form-control  form-control-md text-center" value="0" min="0">
+                  <button class="btn btn-outline-secondary btn-md" onclick="adicionarAoCarrinho('quantidade-mouse', 1) " type="button">+</button>
+                </div>
+              </div>
+              <div class="col-md-12 p-2 text-end">
+                <a href="contato.html" class="btn btn-primary">Quero saber mais</a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -90,9 +147,22 @@
         <div class="card h-100">
           <div class="card-body">
             <h5 class="card-title">Teclado Mecanico</h5>
-            <img src="https://images.unsplash.com/photo-1618384887929-16ec33fab9ef?auto=format&fit=crop&w=1200&q=80" class="card-img-top mb-3 img-produto" alt="Teclado mecanico para setup gamer">
+            <img src="https://images.unsplash.com/photo-1618384887929-16ec33fab9ef?auto=format&fit=crop&w=1200&q=80"
+              class="card-img-top mb-3 img-produto" alt="Teclado mecanico para setup gamer">
             <p class="card-text">Resposta rapida e excelente experiencia de digitacao.</p>
-            <a href="contato.html" class="btn btn-primary">Quero saber mais</a>
+            <div class="row text-end">
+              <div class="col-md-12 ">
+                <div class="input-group">
+                  <label for="quantidade-teclado" class="input-group-text">Adicionar ao carrinho:</label>
+                  <button class="btn btn-outline-secondary btn-md" onclick="adicionarAoCarrinho('quantidade-teclado', -1) " type="button">-</button>
+                  <input type="number" id="quantidade-teclado" class="form-control  form-control-md text-center" value="0" min="0">
+                  <button class="btn btn-outline-secondary btn-md" onclick="adicionarAoCarrinho('quantidade-teclado', 1) " type="button">+</button>
+                </div>
+              </div>
+              <div class="col-md-12 p-2 text-end">
+                <a href="contato.html" class="btn btn-primary">Quero saber mais</a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -101,9 +171,22 @@
         <div class="card h-100">
           <div class="card-body">
             <h5 class="card-title">Monitor Full HD</h5>
-            <img src="https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=1200&q=80" class="card-img-top mb-3 img-produto" alt="Monitor full HD com tela ampla">
+            <img src="https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=1200&q=80"
+              class="card-img-top mb-3 img-produto" alt="Monitor full HD com tela ampla">
             <p class="card-text">Imagem nitida para estudo, trabalho e entretenimento.</p>
-            <a href="contato.html" class="btn btn-primary">Quero saber mais</a>
+            <div class="row text-end">
+              <div class="col-md-12 ">
+                <div class="input-group">
+                  <label for="quantidade-monitor" class="input-group-text">Adicionar ao carrinho:</label>
+                  <button class="btn btn-outline-secondary btn-md" onclick="adicionarAoCarrinho('quantidade-monitor', -1) " type="button">-</button>
+                  <input type="number" id="quantidade-monitor" class="form-control  form-control-md text-center" value="0" min="0">
+                  <button class="btn btn-outline-secondary btn-md" onclick="adicionarAoCarrinho('quantidade-monitor', 1) " type="button">+</button>
+                </div>
+              </div>
+              <div class="col-md-12 p-2 text-end">
+                <a href="contato.html" class="btn btn-primary">Quero saber mais</a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -111,7 +194,7 @@
   </section>
 
   <script src="js/main.js"></script>
-
+  <script src="js/ui.js"></script>
 
 </body>
 
