@@ -1,4 +1,5 @@
 import { aplicarTema, alternarTema, renderizarProdutos } from "./ui.js";
+import { buscarCep } from "./api.js";
 import { produtos } from "./produtos.js";
 
 // O nome da chava onde salvamos o tema no localStorage
@@ -13,6 +14,10 @@ aplicarTema(temaSalvo);
 const botaoTema = document.getElementById("btnTema");
 // Adiciona um ouvinte de evento ao botão de tema para alternar o tema quando clicado
 if (botaoTema) botaoTema.addEventListener("click", alternarTema);
+
+// Listener para buscar o cep
+const cepInput = document.getElementById("cep");
+if (cepInput) cepInput.addEventListener("blur", buscarCep);
 
 // Renderiza os cards de produtos dinamicamente na página de produtos
 renderizarProdutos(produtos);

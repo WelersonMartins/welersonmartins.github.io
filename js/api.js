@@ -1,7 +1,7 @@
 /**
  * Busca o cep na api do viacep
  */
-function buscarCep() {
+export function buscarCep() {
   const cepInput = document.getElementById("cep");
   const cep = cepInput.value.replace(/\D/g, ""); // Remove caracteres não numéricos
 
@@ -26,7 +26,3 @@ function buscarCep() {
     alert("Por favor, insira um CEP válido com 8 dígitos.");
   }
 }
-
-// Listener para buscar o cep
-const cepInput = document.getElementById("cep");
-if (cepInput) cepInput.addEventListener("blur", buscarCep);
