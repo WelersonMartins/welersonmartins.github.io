@@ -1,23 +1,23 @@
 body {
-	/*background-image: url('/imagens/background.jpg');*/
-	background-repeat: no-repeat; /* Evita que a imagem seja repetida em mosaico */
-	background-size: cover; /* Ajusta a imagem para cobrir todo o container */
-	background-position: center; /* Centraliza a imagem na area visivel */
-	background-attachment: fixed; /* Mantem a imagem fixa enquanto o conteudo rola */
-	/*background-color: #cccccc; /* Cor de fundo de reserva caso a imagem nao carregue */
+  /*background-image: url('/imagens/background.jpg');*/
+  background-repeat: no-repeat; /* Evita que a imagem seja repetida em mosaico */
+  background-size: cover; /* Ajusta a imagem para cobrir todo o container */
+  background-position: center; /* Centraliza a imagem na area visivel */
+  background-attachment: fixed; /* Mantem a imagem fixa enquanto o conteudo rola */
+  /*background-color: #cccccc; /* Cor de fundo de reserva caso a imagem nao carregue */
 }
 
 /* Controla a altura do carousel */
 #slider .carousel-item img {
-	height: 500px;       /* Altura desejada — ajuste o valor conforme necessário */
-	object-fit: cover;   /* Recorta a imagem para preencher o espaço sem deformar */
-	object-position: center; /* Centraliza o recorte */
-	padding-bottom: 20px; /* Adiciona um espaçamento inferior para evitar que o conteúdo fique muito próximo do slider */
+  height: 500px; /* Altura desejada — ajuste o valor conforme necessário */
+  object-fit: cover; /* Recorta a imagem para preencher o espaço sem deformar */
+  object-position: center; /* Centraliza o recorte */
+  padding-bottom: 20px; /* Adiciona um espaçamento inferior para evitar que o conteúdo fique muito próximo do slider */
 }
 
 .img-produto {
   width: 100%;
-  height: 220px;      /* altura padrão para todos os cards */
-  object-fit: cover;  /* recorta sem deformar */
+  height: 220px; /* altura padrão para todos os cards */
+  object-fit: cover; /* recorta sem deformar */
   object-position: center;
 }
