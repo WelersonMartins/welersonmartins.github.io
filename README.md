@@ -11,6 +11,50 @@ Projeto didático desenvolvido nas aulas de **Análise e Desenvolvimento de Sist
 - JavaScript (ES6+)
 - Bootstrap 5
 - Git & GitHub
+- Vite
+- ESLint
+- Prettier
+- Husky + lint-staged
+
+---
+
+## Ferramentas de Desenvolvimento
+
+### Vite
+
+Utilizado como servidor de desenvolvimento e ferramenta de build do projeto.
+
+- Desenvolvimento local: `npm run dev`
+- Build de produção: `npm run build`
+
+### ESLint
+
+Responsável por analisar o código JavaScript e apontar problemas de qualidade, padrão e possíveis erros.
+
+- Verificar código: `npm run lint`
+
+Configuração em `eslint.config.mjs` com:
+
+- Regras recomendadas do ESLint (`@eslint/js`)
+- Compatibilidade com Prettier (`eslint-config-prettier`)
+- Ambiente de navegador e módulos ES
+
+### Prettier
+
+Ferramenta de formatação automática para manter o estilo de código consistente.
+
+- Formatar arquivos: `npm run format`
+
+### Husky + lint-staged
+
+Husky é usado para automação de hooks de Git e o `lint-staged` roda validações apenas nos arquivos alterados antes do commit.
+
+No projeto, os arquivos `*.js` e `*.ts` staged passam por:
+
+1. `eslint --fix`
+2. `prettier --write`
+
+Isso ajuda a garantir qualidade e padronização do código antes de subir alterações.
 
 ---
 
@@ -65,15 +109,43 @@ Publicação gratuita do site no **GitHub Pages** e criação de um `README.md` 
 
 ---
 
-## Como executar localmente
+## Setup Inicial
 
 1. Clone o repositório:
    ```bash
    git clone https://github.com/WelersonMartins/welersonmartins.github.io.git
    ```
-2. Abra o arquivo `index.html` no navegador.
+2. Entre na pasta do projeto:
+   ```bash
+   cd welersonmartins.github.io
+   ```
+3. Instale as dependências:
+   ```bash
+   npm install
+   ```
 
-> Não requer instalação de dependências — o Bootstrap é carregado via CDN.
+## Como executar localmente
+
+1. Inicie o servidor de desenvolvimento:
+   ```bash
+   npm run dev
+   ```
+2. Abra a URL mostrada no terminal (normalmente `http://localhost:5173`).
+
+## Comandos úteis
+
+- Verificar código com ESLint:
+  ```bash
+  npm run lint
+  ```
+- Formatar arquivos com Prettier:
+  ```bash
+  npm run format
+  ```
+- Gerar build de produção:
+  ```bash
+  npm run build
+  ```
 
 ---
 
