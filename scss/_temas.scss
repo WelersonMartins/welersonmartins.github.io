@@ -1,0 +1,39 @@
+/**
+ * TEMAS BOOTSTRAP
+ *
+ * Sobrescrita de tema claro e escuro.
+ */
+
+@use 'tipografia' as *;
+
+[data-bs-theme="light"] {
+  --bs-body-bg: #ffffff;
+  --bs-body-color: #{$cor-fonte};
+  --bs-secondary-bg: #f8f9fa;
+  --bs-secondary-color: #{$cor-fonte};
+  --bs-border-color: #e5e7eb;
+  --bs-primary: #2563eb;
+  --bs-link-color: #2563eb;
+  --bs-link-hover-color: #1d4ed8;
+  --bs-card-bg: #ffffff;
+  --bs-card-border-color: #e5e7eb;
+  --bs-body-font-family: #{$fonte-principal};
+  --bs-font-sans-serif: #{$fonte-principal};
+  --bs-body-font-weight: #{$peso-fonte};
+}
+
+[data-bs-theme="dark"] {
+  --bs-body-bg: #111827;
+  --bs-body-color: #{$cor-fonte};
+  --bs-secondary-bg: #1f2937;
+  --bs-secondary-color: #{$cor-fonte};
+  --bs-border-color: #374151;
+  --bs-primary: #3b82f6;
+  --bs-link-color: #60a5fa;
+  --bs-link-hover-color: #93c5fd;
+  --bs-card-bg: #1f2937;
+  --bs-card-border-color: #374151;
+  --bs-body-font-family: #{$fonte-principal};
+  --bs-font-sans-serif: #{$fonte-principal};
+  --bs-body-font-weight: #{$peso-fonte};
+}
