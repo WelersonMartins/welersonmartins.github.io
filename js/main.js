@@ -2,21 +2,16 @@ import { aplicarTema, definirTema, renderizarProdutos } from "./ui.js";
 import { buscarCep } from "./api.js";
 import { produtos } from "./produtos.js";
 
-// O nome da chava onde salvamos o tema no localStorage
-const TEMA_STORAGE_KEY = "tema";
-
 // Retorna o tema salvo no localStorage ou usa o tema padrão se não houver um tema salvo, e aplica o tema ao carregar a página
-const temaSalvo = localStorage.getItem(TEMA_STORAGE_KEY) || "light";
+const temaSalvo = localStorage.getItem("tema") || "light";
 // Executa a função para aplicar o tema salvo ou o tema padrão ao carregar a página
 aplicarTema(temaSalvo);
 
-// Adiciona listeners para os itens do dropdown de tema
-const botoesDropdownTema = document.querySelectorAll("[data-tema]");
-botoesDropdownTema.forEach((botao) => {
-  botao.addEventListener("click", (e) => {
+// Adiciona listeners nos itens do dropdown de tema
+document.querySelectorAll("[data-tema]").forEach((item) => {
+  item.addEventListener("click", (e) => {
     e.preventDefault();
-    const temaSelecionado = botao.getAttribute("data-tema");
-    definirTema(temaSelecionado, TEMA_STORAGE_KEY);
+    definirTema(e.currentTarget.dataset.tema);
   });
 });
 

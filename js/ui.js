@@ -4,13 +4,18 @@
 const TEMAS_DISPONIVEIS = ["light", "dark", "azul", "verde"];
 
 /**
+ * Chave usada para persistir o tema no localStorage
+ */
+const TEMA_STORAGE_KEY = "tema";
+
+/**
  * Mapeia nomes de temas para labels de exibição
  */
 const LABELS_TEMAS = {
-  light: "Tema: Light",
-  dark: "Tema: Dark",
-  azul: "Tema: Azul",
-  verde: "Tema: Verde",
+  light: "Light",
+  dark: "Dark",
+  azul: "Azul",
+  verde: "Verde",
 };
 
 /**
@@ -27,7 +32,7 @@ export function aplicarTema(tema) {
 /**
  * Define um tema específico e salva no localStorage
  */
-export function definirTema(tema, TEMA_STORAGE_KEY) {
+export function definirTema(tema) {
   if (TEMAS_DISPONIVEIS.includes(tema)) {
     aplicarTema(tema);
     localStorage.setItem(TEMA_STORAGE_KEY, tema);
@@ -37,7 +42,7 @@ export function definirTema(tema, TEMA_STORAGE_KEY) {
 /**
  * Alterna entre os temas disponíveis, aplicando o novo tema e salvando a escolha no localStorage.
  */
-export function alternarTema(TEMA_STORAGE_KEY) {
+export function alternarTema() {
   // Obtém o tema atual do atributo data-bs-theme ou usa o tema padrão se não estiver definido
   const temaAtual =
     document.documentElement.getAttribute("data-bs-theme") || "light";
