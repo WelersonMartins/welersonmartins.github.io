@@ -37,3 +37,35 @@
   --bs-font-sans-serif: #{$fonte-principal};
   --bs-body-font-weight: #{$peso-fonte};
 }
+
+[data-bs-theme="azul"] {
+  --bs-body-bg: #588fd6;
+  --bs-body-color: #{$cor-fonte};
+  --bs-secondary-bg: #dbeafe;
+  --bs-secondary-color: #{$cor-fonte};
+  --bs-border-color: #bfdbfe;
+  --bs-primary: #1e40af;
+  --bs-link-color: #1e40af;
+  --bs-link-hover-color: #1e3a8a;
+  --bs-card-bg: #ffffff;
+  --bs-card-border-color: #bfdbfe;
+  --bs-body-font-family: #{$fonte-principal};
+  --bs-font-sans-serif: #{$fonte-principal};
+  --bs-body-font-weight: #{$peso-fonte};
+}
+
+[data-bs-theme="verde"] {
+  --bs-body-bg: #f0fdf4;
+  --bs-body-color: #{$cor-fonte};
+  --bs-secondary-bg: #dcfce7;
+  --bs-secondary-color: #{$cor-fonte};
+  --bs-border-color: #bbf7d0;
+  --bs-primary: #166534;
+  --bs-link-color: #166534;
+  --bs-link-hover-color: #15803d;
+  --bs-card-bg: #ffffff;
+  --bs-card-border-color: #bbf7d0;
+  --bs-body-font-family: #{$fonte-principal};
+  --bs-font-sans-serif: #{$fonte-principal};
+  --bs-body-font-weight: #{$peso-fonte};
+}

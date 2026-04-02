@@ -1,4 +1,4 @@
-import { aplicarTema, alternarTema, renderizarProdutos } from "./ui.js";
+import { aplicarTema, definirTema, renderizarProdutos } from "./ui.js";
 import { buscarCep } from "./api.js";
 import { produtos } from "./produtos.js";
 
@@ -10,10 +10,15 @@ const temaSalvo = localStorage.getItem(TEMA_STORAGE_KEY) || "light";
 // Executa a função para aplicar o tema salvo ou o tema padrão ao carregar a página
 aplicarTema(temaSalvo);
 
-// Obtém o elemento do botão de tema pelo ID
-const botaoTema = document.getElementById("btnTema");
-// Adiciona um ouvinte de evento ao botão de tema para alternar o tema quando clicado
-if (botaoTema) botaoTema.addEventListener("click", alternarTema);
+// Adiciona listeners para os itens do dropdown de tema
+const botoesDropdownTema = document.querySelectorAll("[data-tema]");
+botoesDropdownTema.forEach((botao) => {
+  botao.addEventListener("click", (e) => {
+    e.preventDefault();
+    const temaSelecionado = botao.getAttribute("data-tema");
+    definirTema(temaSelecionado, TEMA_STORAGE_KEY);
+  });
+});
 
 // Listener para buscar o cep
 const cepInput = document.getElementById("cep");

@@ -1,25 +1,52 @@
 /**
+ * Lista de temas disponíveis em ordem de ciclo
+ */
+const TEMAS_DISPONIVEIS = ["light", "dark", "azul", "verde"];
+
+/**
+ * Mapeia nomes de temas para labels de exibição
+ */
+const LABELS_TEMAS = {
+  light: "Tema: Light",
+  dark: "Tema: Dark",
+  azul: "Tema: Azul",
+  verde: "Tema: Verde",
+};
+
+/**
  * Aplica o tema selecionado ao documento e atualiza o texto do botão de tema.
  */
 export function aplicarTema(tema) {
   // Define o atributo data-bs-theme no elemento raiz do documento
   document.documentElement.setAttribute("data-bs-theme", tema);
-  // Atualiza o texto do botão de tema para refletir o tema atual
-  const botaoTema = document.getElementById("btnTema");
-  if (botaoTema)
-    botaoTema.textContent = tema === "dark" ? "Tema: Dark" : "Tema: Light";
+  // Atualiza o texto do botão dropdown para refletir o tema atual
+  const botaoTema = document.getElementById("dropdownTema");
+  if (botaoTema) botaoTema.textContent = LABELS_TEMAS[tema] || "Tema: Light";
 }
 
 /**
- * Alterna entre os temas claro e escuro, aplicando o novo tema e salvando a escolha no localStorage.
+ * Define um tema específico e salva no localStorage
+ */
+export function definirTema(tema, TEMA_STORAGE_KEY) {
+  if (TEMAS_DISPONIVEIS.includes(tema)) {
+    aplicarTema(tema);
+    localStorage.setItem(TEMA_STORAGE_KEY, tema);
+  }
+}
+
+/**
+ * Alterna entre os temas disponíveis, aplicando o novo tema e salvando a escolha no localStorage.
  */
 export function alternarTema(TEMA_STORAGE_KEY) {
   // Obtém o tema atual do atributo data-bs-theme ou usa o tema padrão se não estiver definido
   const temaAtual =
     document.documentElement.getAttribute("data-bs-theme") || "light";
-  // Determina o novo tema com base no tema atual
-  const novoTema = temaAtual === "light" ? "dark" : "light";
-  // Aplica o novo tema e salva a escolha no localStorage
+  // Encontra o índice do tema atual na lista
+  const indiceAtual = TEMAS_DISPONIVEIS.indexOf(temaAtual);
+  // Calcula o índice do próximo tema (volta ao início se estiver no final)
+  const proximoIndice = (indiceAtual + 1) % TEMAS_DISPONIVEIS.length;
+  const novoTema = TEMAS_DISPONIVEIS[proximoIndice];
+  // Aplica o novo tema
   aplicarTema(novoTema);
   // Salva o novo tema no localStorage para persistir a escolha do usuário
   localStorage.setItem(TEMA_STORAGE_KEY, novoTema);
