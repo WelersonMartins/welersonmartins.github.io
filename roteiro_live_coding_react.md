@@ -1,6 +1,5 @@
 # 🚀 Roteiro de Aula (Live Coding): Migrando de Vanilla JS para React (Na Mesma Aplicação)
 
-**Público-alvo:** Alunos de ADS que já conhecem HTML, CSS, JS, TS e ES6.
 **Objetivo:** Pegar o projeto clássico de 3 páginas (Index, Produtos, Contato) feito com Vanilla JS e transformá-lo em uma Single Page Application (SPA) moderna com React e TypeScript, tudo dentro da mesma pasta do projeto original.
 
 ---
@@ -124,17 +123,29 @@ import { Link } from 'react-router-dom';
 
 export function Header() {
   return (
-    <header>
-      <nav>
-        <h2>Minha Loja</h2>
-        {/* Aviso didático: Transforme as antigas tags <a> em componentes <Link> do React Router */}
-        <ul>
-          <li><Link to="/">Início</Link></li>
-          <li><Link to="/produtos">Produtos</Link></li>
-          <li><Link to="/contato">Contato</Link></li>
-        </ul>
+    <section id="navegacao">
+      <nav className="navbar navbar-expand-lg bg-body-tertiary">
+        <div className="container-fluid">
+          <Link className="navbar-brand" to="/">Tech Store</Link>
+          <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span className="navbar-toggler-icon"></span>
+          </button>
+          <div className="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+              <li className="nav-item">
+                <Link className="nav-link active" to="/">Home</Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link active" to="/produtos">Produtos</Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link active" to="/contato">Contato</Link>
+              </li>
+            </ul>
+          </div>
+        </div>
       </nav>
-    </header>
+    </section>
   );
 }
 ```
@@ -167,7 +178,7 @@ import { Header } from './components/Header';
 import { Footer } from './components/Footer';
 
 // Componentes temporários (mocks) representando nossas antigas páginas
-const Home = () => <h2>Página Inicial Antiga</h2>;
+const Home = () => <h2 className="text-center mb-4">Bem vindo ao Tech Store</h2>;
 const Produtos = () => <h2>Nossos Produtos</h2>;
 const Contato = () => <h2>Fale Conosco</h2>;
 
@@ -176,8 +187,8 @@ export function App() {
     <BrowserRouter>
       <div>
         <Header />
-        {/* O conteúdo do 'main' dinâmico vai mudar de acordo com a rota URL */}
-        <main className="container-principal">
+        {/* O conteúdo dinâmico agora entra no container do Bootstrap */}
+        <main id="conteudo" className="container py-5">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/produtos" element={<Produtos />} />
@@ -202,6 +213,8 @@ Aqui vamos substituir a manipulação de DOM que eles faziam no Vanilla JS pelo 
 Crie `src/components/ProdutoCard.tsx`:
 ```tsx
 // src/components/ProdutoCard.tsx
+import { Link } from 'react-router-dom';
+
 interface ProdutoCardProps {
   id: string;
   titulo: string;
@@ -211,14 +224,18 @@ interface ProdutoCardProps {
   preco: number;
 }
 
-export function ProdutoCard({ titulo, imagem, alt, descricao, preco }: ProdutoCardProps) {
+export function ProdutoCard({ id, titulo, imagem, alt, descricao, preco }: ProdutoCardProps) {
   return (
-    <div className="card-produto">
-      <img src={imagem} alt={alt} style={{ maxWidth: '100%', borderRadius: '8px' }} />
-      <h3>{titulo}</h3>
-      <p>{descricao}</p>
-      <p><strong>R$ {preco.toFixed(2)}</strong></p>
-      <button>Comprar</button>
+    <div className="col">
+      <div className="card h-100">
+        <div className="card-body">
+          <h5 className="card-title">{titulo}</h5>
+          <img src={imagem} className="card-img-top img-produto" alt={alt} />
+          <p className="card-text">{descricao}</p>
+          <p className="card-text"><strong>R$ {preco.toFixed(2)}</strong></p>
+          <Link to={`/produtos/${id}`} className="btn btn-primary">Ver produto</Link>
+        </div>
+      </div>
     </div>
   );
 }
@@ -235,8 +252,9 @@ import { produtos } from '../../js/produtos.js';
 export function Produtos() {
   return (
     <div>
-      <h2>Nossos Produtos</h2>
-      <div className="grid-produtos" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '20px' }}>
+      <h1 className="text-center mb-4">Nossos Produtos</h1>
+      {/* Usando o Grid System do Bootstrap (linhas e colunas) */}
+      <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
         {produtos.map((produto) => (
           <ProdutoCard 
             key={produto.id} 
@@ -284,27 +302,30 @@ export function Contato() {
 
   return (
     <div>
-      <h2>Fale Conosco</h2>
-      <form onSubmit={handleSubmit} className="form-contato">
-        <div>
-          <label>Nome:</label>
-          {/* Two-Way Data Binding */}
+      <h1 className="text-center mb-4">Fale Conosco</h1>
+      <form onSubmit={handleSubmit}>
+        <div className="mb-3">
+          <label className="form-label">Nome:</label>
+          {/* Two-Way Data Binding com classes do Bootstrap */}
           <input 
             type="text" 
+            className="form-control"
             value={nome}
             onChange={(e) => setNome(e.target.value)}
             required
           />
         </div>
-        <div>
-          <label>Mensagem:</label>
+        <div className="mb-3">
+          <label className="form-label">Mensagem:</label>
           <textarea 
+            className="form-control"
+            rows={4}
             value={mensagem}
             onChange={(e) => setMensagem(e.target.value)}
             required
-          />
+          ></textarea>
         </div>
-        <button type="submit">Enviar</button>
+        <button type="submit" className="btn btn-primary">Enviar</button>
       </form>
     </div>
   );
