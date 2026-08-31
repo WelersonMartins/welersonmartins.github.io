@@ -1,0 +1,97 @@
+body {
+	background-color: rgb(157, 224, 196);
+	font-family: "Lucida Console", Monaco, monospace;
+	text-align: center;
+	display: flex;
+	
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}
+
+a:hover{
+	color: red;
+	background-color: aliceblue;
+}
+
+#imagem > img {
+	border: 5px solid black;
+	border-radius: 50%;
+	margin: 20px;
+}
+
+
+nav {
+	box-shadow: 10px 5px gray;
+}
+#navegacao {
+	text-align: center;
+	background-color: antiquewhite;
+	padding: 20px;
+	position: right;
+}
+
+#navegacao > ul {
+	justify-content: center;
+}
+
+#navegacao > ul > li {
+	margin: 2px;
+	padding: 20px;
+	border-radius: 10%;
+	background-color: rgb(223, 157, 157);
+	margin-right: 2%;
+	margin-bottom: 20%;
+	
+}
+
+
+#navegacao > ul > li:hover {
+	background-color: red;
+}
+
+
+section {
+	 border: 6px solid #000;
+	background-color: bisque;
+	text-align: center;
+	padding-bottom: 10px;
+	justify-content: center;
+	margin: 20px;
+	box-shadow: 10px 5px gray;
+}
+
+/* remover os pontinhos da lista */
+ul {
+  list-style-type: none; 
+  padding: 0;            
+  margin: 0;   
+  list-style: none;        
+}
+
+table {
+	width: 100%;
+}
+
+thead {
+	background-color: black;
+	color: wheat;
+}
+
+tbody {
+	background-color: wheat;
+	color: black;
+}
+
+h1, h2, h3{
+	text-transform: uppercase;
+}
+
+td img {
+    display: block;  
+    width: 200px;      
+    height: 200px;  
+	border-radius: 25%;
+} 
